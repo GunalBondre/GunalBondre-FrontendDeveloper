@@ -9,8 +9,6 @@ const Input = (props) => {
 		setValue(text);
 	};
 
-	console.log(value);
-
 	const {
 		variant,
 		label,
