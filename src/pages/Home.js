@@ -6,39 +6,37 @@ import Button from '../components/button/Button';
 import Input from '../components/common/input/Input';
 import Dropdown from '../components/select/Dropdown';
 import { getData } from '../redux/capsuleSlice';
-import Select from 'react-select';
 import Card from '../components/card/Card';
 
 const Home = () => {
 	const { data } = useSelector((state) => state.capsules);
+
 	const [page, setPage] = useState(1);
-	const [type, setType] = useState([]);
-	const [status, setStatus] = useState([]);
-	const [filteredData, setFilteredData] = useState([]);
+	const [type, setType] = useState('');
+	const [status, setStatus] = useState('');
+	const [formError, setFormError] = useState('');
+	const [filteredData, setFilteredData] = useState(data);
 
 	const dispatch = useDispatch();
 	const handleSubmit = (e) => {
 		e.preventDefault();
-		let newData = data.filter((items) => {
-			if (status && type) {
-				setFilteredData({ type: items['type'], status: items['status'] });
-			} else if (status) {
-				setStatus(items['status']);
-				setFilteredData({ status: items['status'] });
-			} else if (type) {
-				setType(items['type']);
-				setFilteredData({ type: items['type'] });
-			}
-			return data;
-		});
-
-		return newData;
+		console.log(type.length, type, '--');
+		if (type.length === 0 || status.length === 0) {
+			setFormError('Please enter all required fields');
+		} else {
+			const selectedData = data.filter(
+				(item) => item['status'] === status.value && item['type'] === type.value
+			);
+			setFormError('');
+			setFilteredData(selectedData);
+		}
 	};
 
 	const statusData = [
 		{ value: 'retired', label: 'retired' },
 		{ value: 'active', label: 'active' },
 		{ value: 'destroyed', label: 'destroyed' },
+		{ value: 'unknown', label: 'unknown' },
 	];
 
 	const typeData = [
@@ -48,9 +46,10 @@ const Home = () => {
 	];
 
 	const handlePagination = (selectedPage) => {
+		console.log(selectedPage);
 		if (
 			selectedPage >= 1 &&
-			selectedPage <= data.length / 4 &&
+			selectedPage <= filteredData.length / 3 &&
 			selectedPage !== page
 		) {
 			setPage(selectedPage);
@@ -60,6 +59,12 @@ const Home = () => {
 	useEffect(() => {
 		dispatch(getData());
 	}, [dispatch]);
+
+	useEffect(() => {
+		if (data.length) {
+			setFilteredData(data);
+		}
+	}, [data]);
 
 	return (
 		<>
@@ -86,7 +91,8 @@ const Home = () => {
 					<div className='md:flex-1'></div>
 				</div>
 			</div>
-			<div className='searchForm py-20 w-screen flex justify-center'>
+			<div className='searchForm py-20 w-screen flex flex-col items-center justify-center'>
+				<h2 className='text-2xl'>Search for the capsule details</h2>
 				<form
 					onSubmit={handleSubmit}
 					className='w-full md:w-[60%] flex flex-col h-auto md:flex-row md:justify-between p-10'
@@ -94,35 +100,40 @@ const Home = () => {
 					<div className='form-group md:w-[50%] w-full mb-2 md:mb-0 md:mx-2'>
 						<Dropdown
 							options={statusData}
-							isSearchable={true}
 							onChange={(e) => setStatus(e)}
 							value={status}
-							required
+							defaultValue={statusData[1]}
 						/>
 					</div>
 					<div className='form-group md:w-[50%] w-full mb-2 md:mb-0 md:mx-2'>
 						<Dropdown
 							options={typeData}
-							isSearchable={true}
 							onChange={(e) => setType(e)}
 							value={type}
+							defaultValue={typeData[1]}
 						/>
 					</div>
 					<div className='form-group md:w-[50%] w-full mb-2 md:mb-0 md:mx-2'>
-						<Button bgColor='gray'>Search</Button>
+						<Button bgColor='red' color='white'>
+							Search
+						</Button>
 					</div>
 				</form>
+				<p>{formError}</p>
 			</div>
 			<div className='max-w-7xl mx-auto grid w-full py-10 grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 place-items-center'>
-				{data.slice(page * 4 - 4, page * 4).map((item) => {
-					return <Card item={item} key={item.capsule_serial} />;
-				})}
+				{filteredData.length
+					? filteredData.slice(page * 4 - 4, page * 4).map((item) => {
+							return <Card item={item} key={item.capsule_serial} />;
+							// eslint-disable-next-line no-mixed-spaces-and-tabs
+					  })
+					: 'No Data Found'}
 			</div>
-			{data.length > 0 && (
+			{filteredData.length > 0 && (
 				<div className='pagination py-10 flex justify-center items-center  mx-auto'>
 					<button onClick={() => handlePagination(page - 1)}>prev</button>
 					<span>
-						{[...Array(Math.floor(data.length / 4))].map((_, i) => {
+						{[...Array(Math.ceil(filteredData.length / 4))].map((_, i) => {
 							return (
 								<span
 									className={

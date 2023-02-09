@@ -1,4 +1,6 @@
 import React, { useState } from 'react';
+import PropTypes from 'prop-types';
+
 import { LabelWrapper, InputLabelWrapper, InputWrapper } from './input.style';
 
 const Input = (props) => {
@@ -10,7 +12,6 @@ const Input = (props) => {
 	};
 
 	const {
-		variant,
 		label,
 		placeholder,
 		width,
@@ -20,20 +21,16 @@ const Input = (props) => {
 		fontSize,
 		textColor,
 		bgColor,
-		labelPosition,
 		maxWidth,
 		disabled,
 		type,
-		onChange,
-		name,
 		...restProps
 	} = props;
 	return (
 		<div>
-			<InputLabelWrapper className='input__wrapper'>
+			<InputLabelWrapper className='input__wrapper' data-testid='input-wrapper'>
 				<LabelWrapper>{!placeholder && label}</LabelWrapper>
 				<InputWrapper
-					variant={variant}
 					placeholder={placeholder}
 					width={width}
 					borderColor={borderColor}
@@ -42,12 +39,12 @@ const Input = (props) => {
 					fontSize={fontSize}
 					textColor={textColor}
 					bgColor={bgColor}
-					labelPosition={labelPosition}
 					maxWidth={maxWidth}
 					disabled={disabled}
 					type={type}
 					onChange={handleChange}
 					value={value}
+					data-testid='input'
 					{...restProps}
 				/>
 			</InputLabelWrapper>
@@ -55,4 +52,32 @@ const Input = (props) => {
 	);
 };
 
+Input.propTypes = {
+	label: PropTypes.string,
+	placeholder: PropTypes.string,
+	width: PropTypes.oneOfType([PropTypes.number, PropTypes.string]),
+	borderColor: PropTypes.string,
+	borderRadius: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
+	padding: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
+	fontSize: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
+	textColor: PropTypes.string,
+	bgColor: PropTypes.string,
+	maxWidth: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
+	disabled: PropTypes.bool,
+	type: PropTypes.string,
+};
+
+Input.defaultProps = {
+	label: undefined,
+	placeholder: undefined,
+	width: undefined,
+	borderColor: undefined,
+	borderRadius: undefined,
+	padding: undefined,
+	fontSize: undefined,
+	textColor: undefined,
+	bgColor: undefined,
+	maxWidth: undefined,
+	disabled: false,
+};
 export default Input;

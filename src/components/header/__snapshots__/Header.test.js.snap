@@ -1,0 +1,246 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Header Component should match snapshot 1`] = `
+Object {
+  "asFragment": [Function],
+  "baseElement": <body>
+    <div>
+      <div
+        data-testid="navbar"
+      >
+        <div
+          class="nav max-w-7xl h-16 px-10 mx-auto flex items-center justify-between"
+        >
+          <div
+            class="logo"
+          >
+            <a
+              href="/"
+            >
+              SPACEX
+            </a>
+             
+          </div>
+          <ul
+            class="md:flex md:items-center md:pb-0 pb-12 absolute bg-white  md:static left-0 w-full md:w-auto md:pl-0 pl-9 md:z-auto z-[99] transition-all duration-500 ease-in top-[-490px]"
+          >
+            <li
+              class="md:ml-8 md:my-0 my-7"
+            >
+              <a
+                class="text-gray-800 hover:text-gray-400 duration-500"
+                href="/falcon9"
+              >
+                Falcon 9
+              </a>
+            </li>
+            <li
+              class="md:ml-8 md:my-0 my-7"
+            >
+              <a
+                class="text-gray-800 hover:text-gray-400 duration-500"
+                href="/falcon-heavy"
+              >
+                Falcon Heavy
+              </a>
+            </li>
+            <li
+              class="md:ml-8 md:my-0 my-7"
+            >
+              <a
+                class="text-gray-800 hover:text-gray-400 duration-500"
+                href="/dragon"
+              >
+                Dragon
+              </a>
+            </li>
+            <li
+              class="md:ml-8 md:my-0 my-7"
+            >
+              <a
+                class="text-gray-800 hover:text-gray-400 duration-500"
+                href="/starship"
+              >
+                Starship
+              </a>
+            </li>
+            <li
+              class="md:ml-8 md:my-0 my-7"
+            >
+              <a
+                class="text-gray-800 hover:text-gray-400 duration-500"
+                href="/contact"
+              >
+                Contact
+              </a>
+            </li>
+          </ul>
+          <div
+            class="hamburger block md:hidden"
+            data-testid="hamburger-menu"
+          >
+            <svg
+              data-testid="open"
+              fill="currentColor"
+              height="1em"
+              stroke="currentColor"
+              stroke-width="0"
+              viewBox="0 0 24 24"
+              width="1em"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M4 6h16v2H4zm0 5h16v2H4zm0 5h16v2H4z"
+              />
+            </svg>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>,
+  "container": <div>
+    <div
+      data-testid="navbar"
+    >
+      <div
+        class="nav max-w-7xl h-16 px-10 mx-auto flex items-center justify-between"
+      >
+        <div
+          class="logo"
+        >
+          <a
+            href="/"
+          >
+            SPACEX
+          </a>
+           
+        </div>
+        <ul
+          class="md:flex md:items-center md:pb-0 pb-12 absolute bg-white  md:static left-0 w-full md:w-auto md:pl-0 pl-9 md:z-auto z-[99] transition-all duration-500 ease-in top-[-490px]"
+        >
+          <li
+            class="md:ml-8 md:my-0 my-7"
+          >
+            <a
+              class="text-gray-800 hover:text-gray-400 duration-500"
+              href="/falcon9"
+            >
+              Falcon 9
+            </a>
+          </li>
+          <li
+            class="md:ml-8 md:my-0 my-7"
+          >
+            <a
+              class="text-gray-800 hover:text-gray-400 duration-500"
+              href="/falcon-heavy"
+            >
+              Falcon Heavy
+            </a>
+          </li>
+          <li
+            class="md:ml-8 md:my-0 my-7"
+          >
+            <a
+              class="text-gray-800 hover:text-gray-400 duration-500"
+              href="/dragon"
+            >
+              Dragon
+            </a>
+          </li>
+          <li
+            class="md:ml-8 md:my-0 my-7"
+          >
+            <a
+              class="text-gray-800 hover:text-gray-400 duration-500"
+              href="/starship"
+            >
+              Starship
+            </a>
+          </li>
+          <li
+            class="md:ml-8 md:my-0 my-7"
+          >
+            <a
+              class="text-gray-800 hover:text-gray-400 duration-500"
+              href="/contact"
+            >
+              Contact
+            </a>
+          </li>
+        </ul>
+        <div
+          class="hamburger block md:hidden"
+          data-testid="hamburger-menu"
+        >
+          <svg
+            data-testid="open"
+            fill="currentColor"
+            height="1em"
+            stroke="currentColor"
+            stroke-width="0"
+            viewBox="0 0 24 24"
+            width="1em"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M4 6h16v2H4zm0 5h16v2H4zm0 5h16v2H4z"
+            />
+          </svg>
+        </div>
+      </div>
+    </div>
+  </div>,
+  "debug": [Function],
+  "findAllByAltText": [Function],
+  "findAllByDisplayValue": [Function],
+  "findAllByLabelText": [Function],
+  "findAllByPlaceholderText": [Function],
+  "findAllByRole": [Function],
+  "findAllByTestId": [Function],
+  "findAllByText": [Function],
+  "findAllByTitle": [Function],
+  "findByAltText": [Function],
+  "findByDisplayValue": [Function],
+  "findByLabelText": [Function],
+  "findByPlaceholderText": [Function],
+  "findByRole": [Function],
+  "findByTestId": [Function],
+  "findByText": [Function],
+  "findByTitle": [Function],
+  "getAllByAltText": [Function],
+  "getAllByDisplayValue": [Function],
+  "getAllByLabelText": [Function],
+  "getAllByPlaceholderText": [Function],
+  "getAllByRole": [Function],
+  "getAllByTestId": [Function],
+  "getAllByText": [Function],
+  "getAllByTitle": [Function],
+  "getByAltText": [Function],
+  "getByDisplayValue": [Function],
+  "getByLabelText": [Function],
+  "getByPlaceholderText": [Function],
+  "getByRole": [Function],
+  "getByTestId": [Function],
+  "getByText": [Function],
+  "getByTitle": [Function],
+  "queryAllByAltText": [Function],
+  "queryAllByDisplayValue": [Function],
+  "queryAllByLabelText": [Function],
+  "queryAllByPlaceholderText": [Function],
+  "queryAllByRole": [Function],
+  "queryAllByTestId": [Function],
+  "queryAllByText": [Function],
+  "queryAllByTitle": [Function],
+  "queryByAltText": [Function],
+  "queryByDisplayValue": [Function],
+  "queryByLabelText": [Function],
+  "queryByPlaceholderText": [Function],
+  "queryByRole": [Function],
+  "queryByTestId": [Function],
+  "queryByText": [Function],
+  "queryByTitle": [Function],
+  "rerender": [Function],
+  "unmount": [Function],
+}
+`;

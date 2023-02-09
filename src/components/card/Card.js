@@ -1,4 +1,6 @@
 import React from 'react';
+import PropTypes from 'prop-types';
+
 import { rocketImg } from '../../assets';
 
 const Card = ({ item }) => {
@@ -6,6 +8,7 @@ const Card = ({ item }) => {
 		<div
 			className='max-w-md rounded overflow-hidden shadow-lg'
 			key={item.capsule_serial}
+			data-testid='card'
 		>
 			<img className='w-full' src={rocketImg} alt='rocket' />
 			<div className='px-6 py-4'>
@@ -26,5 +29,14 @@ const Card = ({ item }) => {
 		</div>
 	);
 };
-
+Card.propTypes = {
+	item: PropTypes.shape({
+		type: PropTypes.string,
+		original_launch: PropTypes.string,
+		landings: PropTypes.number,
+		status: PropTypes.string,
+		details: PropTypes.string,
+		capsule_serial: PropTypes.string,
+	}),
+};
 export default Card;

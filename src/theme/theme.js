@@ -1,6 +1,5 @@
 import { Palette } from './palette';
 
-// eslint-disable-next-line import/no-anonymous-default-export
 export const theme = {
 	common: {
 		bgColor: 'grey',

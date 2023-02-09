@@ -16,7 +16,7 @@ const Header = () => {
 		{ name: 'Contact', href: '/contact' },
 	];
 	return (
-		<div>
+		<div data-testid='navbar'>
 			<div className='nav max-w-7xl h-16 px-10 mx-auto flex items-center justify-between'>
 				<div className='logo'>
 					<a href='/'>SPACEX</a>{' '}
@@ -37,8 +37,12 @@ const Header = () => {
 						</li>
 					))}
 				</ul>
-				<div className='hamburger block md:hidden' onClick={handleClick}>
-					{open ? <BiX /> : <BiMenu />}
+				<div
+					className='hamburger block md:hidden'
+					onClick={handleClick}
+					data-testid='hamburger-menu'
+				>
+					{open ? <BiX data-testid='close' /> : <BiMenu data-testid='open' />}
 				</div>
 			</div>
 		</div>

@@ -23,7 +23,7 @@ export const InputLabelWrapper = styled.div`
 export const LabelWrapper = styled.div``;
 export const InputWrapper = styled.input`
 	padding: ${(props) => (props.padding ? props.padding : PADDING)}px;
-	width: ${(props) => (props.width ? props.width : 100)}%;
+	width: ${(props) => (props.width ? `${props.width}px` : 100)}%;
 	min-width: 350px;
 	border-radius: ${(props) =>
 		props.borderRadius ? props.borderRadius : BORDER_RADIUS}px;
@@ -49,24 +49,7 @@ export const InputWrapper = styled.input`
 	&:hover {
 		border-color: ${Palette.teal};
 	}
-	${(props) => {
-		let borderColor = props.borderColor;
 
-		if (props.variant === 'standard') {
-			return css`
-				border: none;
-				border-bottom: 2px solid
-					${borderColor ? borderColor : theme.Input.borderColor};
-				border-radius: 0;
-				padding: 0;
-			`;
-		}
-		if (props.variant === 'outlined') {
-			return css`
-				border: 2px solid ${borderColor ? borderColor : theme.Input.borderColor};
-			`;
-		}
-	}}
 	${(props) => {
 		if (props.disabled) {
 			return css`
