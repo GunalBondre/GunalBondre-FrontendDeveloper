@@ -46,10 +46,9 @@ const Home = () => {
 	];
 
 	const handlePagination = (selectedPage) => {
-		console.log(selectedPage);
 		if (
 			selectedPage >= 1 &&
-			selectedPage <= filteredData.length / 3 &&
+			selectedPage <= Math.ceil(filteredData.length / 4) &&
 			selectedPage !== page
 		) {
 			setPage(selectedPage);
@@ -102,7 +101,7 @@ const Home = () => {
 				<h2 className='text-2xl'>Search for the capsule details</h2>
 				<form
 					onSubmit={handleSubmit}
-					className='w-full md:w-[60%] flex flex-col justify-center h-auto md:flex-row md:justify-between p-10'
+					className='w-full md:w-[80%] flex flex-col justify-center h-auto md:flex-row md:justify-between p-10'
 				>
 					<div className='form-group md:w-[50%] w-full mb-2 md:mb-0 md:mx-2'>
 						<Dropdown
