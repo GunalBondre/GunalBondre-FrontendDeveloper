@@ -69,22 +69,30 @@ const Home = () => {
 	return (
 		<>
 			<div
-				className='wrapper w-screen md:h-screen h-auto bg-center bg-no-repeat bg-cover'
+				className='wrapper w-screen lg:h-screen h-auto bg-center bg-no-repeat bg-cover py-10'
 				style={{ backgroundImage: `url(${background})` }}
 			>
-				<div className='hero-section max-w-7xl flex flex-col md:flex-row md:h-screen h-auto mx-auto px-10 py-10 md:py-0'>
+				<div className='hero-section max-w-7xl flex flex-col md:flex-row lg:h-screen h-auto mx-auto px-5 sm:px-10 py-10 md:py-0'>
 					<div className='hero-section__content-block flex flex-1 justify-center items-center'>
 						<div className='hero-section__text text-white'>
-							<h1 className='text-4xl'>SPACE</h1>
+							<h1 className='text-2xl md:text-6xl'>SPACE</h1>
 							<h3>Reasearch Center</h3>
 							<p className='py-5 text-lg'>
 								Lorem ipsum dolor sit, amet consectetur adipisicing elit.
 								Cupiditate adipisci consequuntur expedita culpa iusto optio
-								ipsum neque eligendi accusantium libero?
+								ipsum neque eligendi accusantium libero? culpa iusto optio ipsum
+								neque eligendi accusantium libero?
 							</p>
-							<div className='hero-section__form flex flex-col items-center w-full md:flex-row py-2'>
+							<div className='hero-section__form flex  flex-col items-center w-full md:flex-row py-2'>
 								<Input type='email' bgColor='white' placeholder='Enter Email' />
-								<Button className='ml-2 mt-2 md:mt-0'>Submit</Button>
+								<Button
+									bgColor='red'
+									color='white'
+									padding='8'
+									className='ml-2 mt-2 md:mt-0'
+								>
+									Submit
+								</Button>
 							</div>
 						</div>
 					</div>
@@ -95,7 +103,7 @@ const Home = () => {
 				<h2 className='text-2xl'>Search for the capsule details</h2>
 				<form
 					onSubmit={handleSubmit}
-					className='w-full md:w-[60%] flex flex-col h-auto md:flex-row md:justify-between p-10'
+					className='w-full md:w-[60%] flex flex-col justify-center h-auto md:flex-row md:justify-between p-10'
 				>
 					<div className='form-group md:w-[50%] w-full mb-2 md:mb-0 md:mx-2'>
 						<Dropdown
@@ -113,7 +121,7 @@ const Home = () => {
 							defaultValue={typeData[1]}
 						/>
 					</div>
-					<div className='form-group md:w-[50%] w-full mb-2 md:mb-0 md:mx-2'>
+					<div className='form-group md:w-[50%] w-full mb-2 md:mb-0 md:mx-2 flex justify-center'>
 						<Button bgColor='red' color='white'>
 							Search
 						</Button>

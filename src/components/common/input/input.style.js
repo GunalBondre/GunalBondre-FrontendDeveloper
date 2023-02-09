@@ -24,7 +24,6 @@ export const LabelWrapper = styled.div``;
 export const InputWrapper = styled.input`
 	padding: ${(props) => (props.padding ? props.padding : PADDING)}px;
 	width: ${(props) => (props.width ? `${props.width}px` : 100)}%;
-	min-width: 350px;
 	border-radius: ${(props) =>
 		props.borderRadius ? props.borderRadius : BORDER_RADIUS}px;
 	outline: none;

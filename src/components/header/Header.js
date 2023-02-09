@@ -17,7 +17,7 @@ const Header = () => {
 	];
 	return (
 		<div data-testid='navbar'>
-			<div className='nav max-w-7xl h-16 px-10 mx-auto flex items-center justify-between'>
+			<div className='nav max-w-7xl h-16 px-5 sm:px-10 mx-auto flex items-center justify-between'>
 				<div className='logo'>
 					<a href='/'>SPACEX</a>{' '}
 				</div>
