@@ -88,7 +88,6 @@ const Home = () => {
 								<Button
 									bgColor='red'
 									color='white'
-									padding='8'
 									className='ml-2 mt-2 md:mt-0'
 								>
 									Submit
