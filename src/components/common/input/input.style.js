@@ -27,6 +27,7 @@ export const InputWrapper = styled.input`
 	border-radius: ${(props) =>
 		props.borderRadius ? props.borderRadius : BORDER_RADIUS}px;
 	outline: none;
+	border: 1px solid gray;
 	background-color: ${(props) =>
 		props.bgColor
 			? props.bgColor

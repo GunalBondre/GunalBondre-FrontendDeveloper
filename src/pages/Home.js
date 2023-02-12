@@ -20,7 +20,6 @@ const Home = () => {
 	const dispatch = useDispatch();
 	const handleSubmit = (e) => {
 		e.preventDefault();
-		console.log(type.length, type, '--');
 		if (type.length === 0 || status.length === 0) {
 			setFormError('Please enter all required fields');
 		} else {
@@ -68,8 +67,8 @@ const Home = () => {
 	return (
 		<>
 			<div
-				className='wrapper w-screen lg:h-screen h-auto bg-center bg-no-repeat bg-cover py-10'
-				style={{ backgroundImage: `url(${background})` }}
+				className='wrapper lg:h-screen h-auto bg-center bg-no-repeat bg-cover py-10'
+				style={{ backgroundImage: `url(${background})`, width: '100%' }}
 			>
 				<div className='hero-section max-w-7xl flex flex-col md:flex-row lg:h-screen h-auto mx-auto px-5 sm:px-10 py-10 md:py-0'>
 					<div className='hero-section__content-block flex flex-1 justify-center items-center'>
@@ -97,7 +96,7 @@ const Home = () => {
 					<div className='md:flex-1'></div>
 				</div>
 			</div>
-			<div className='searchForm py-20 w-screen flex flex-col items-center justify-center'>
+			<div className='searchForm py-20 w-full flex flex-col items-center justify-center'>
 				<h2 className='text-2xl'>Search for the capsule details</h2>
 				<form
 					onSubmit={handleSubmit}

@@ -3,7 +3,6 @@ import { theme } from '../../theme/theme';
 
 export const ButtonContainer = styled.button`
 	width: ${(props) => (props.width ? `${props.width}px` : '100%')};
-	max-width: ${(props) => (props.width ? props.width : '250px')};
 	min-width: 150px;
 	padding: 8px 10px;
 	display: flex;
